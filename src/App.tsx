@@ -1,15 +1,23 @@
-import Post from "./components/Post";
+import { ThemeProvider } from 'styled-components'
+import Hero from './components/Hero'
+import ListaVagas from './containers/ListaVagas'
 
-import styles from './App.module.css';
+import themeOrigin from './containers/theme/origin'
+
+import Cabecalho from './components/Cabecalho'
+import EstiloGlobal, { Container } from './styles'
 
 function App() {
   return (
-    <div className={styles.app}>
-      <Post imageUrl="https://www.orangeboxminiaturas.com.br/img/products/batmovel-1989-figura-batman-em-metal-jada-toys-1-24-jad-98260_1_1000.jpg">
-        Olha só que legal minha miniatura do Batmóvel.
-      </Post>
-    </div>
-  );
+    <ThemeProvider theme={themeOrigin}>
+      <EstiloGlobal />
+      <Cabecalho />
+      <Hero />
+      <Container>
+        <ListaVagas />
+      </Container>
+    </ThemeProvider>
+  )
 }
 
-export default App;
+export default App
