@@ -1,8 +1,8 @@
-import Post from "..";
+import Post from ".."; 
 import { render, screen } from "@testing-library/react";
 
-describe("Deve renderizar e verificar o Post", () => {
-  test("Deve renderizar a pagina com todos os dados", () => {
+describe("Teste para o componente Post", () => {
+  test("Deve renderizar corretamente", () => {
     render(<Post imageUrl="https://via.placeholder.com/100x100">Teste</Post>);
     expect(screen.getByText("Teste")).toBeInTheDocument();
     const postImage = screen.getByAltText("Post");
